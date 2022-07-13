@@ -1,0 +1,19 @@
+.Patient {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	h2 {
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 1.25;
+	}
+	.content {
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding: 0 35px;
+		column-gap: 35px;
+
+	}
+
+}
