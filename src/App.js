@@ -30,7 +30,7 @@ const App = ({title}) => {
 				<Header/>
 				<Patient/>
 				<Answer/>
-				{/* <Describe/> */}
+				<Describe/>
 		</main>
     </div>
   );

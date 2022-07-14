@@ -15,8 +15,6 @@ export const PatientItem = ({human, url, indications, isActive, id}) => {
 		cls.push(css.active)
 	} 
 
-	console.log(cls.join(' '))
-
 	return (
 		<div className={css.PatientItem}>
 			<h3>{human}</h3>
@@ -24,7 +22,7 @@ export const PatientItem = ({human, url, indications, isActive, id}) => {
 				<img 
 					src={require(`../../../assets/images/${url}.jpg`)} 
 					alt={url} 
-					onClick={ ()=> dispatch(active({tagId: id, isActive: !isActive}))}
+					onClick={() => dispatch(active({tagId: id, isActive: !isActive}))}
 				/>
 			</div>
 			<ul>

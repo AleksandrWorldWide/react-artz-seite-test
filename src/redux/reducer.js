@@ -13,12 +13,22 @@ export const choiceSlice = createSlice({
 			state.patient.items.forEach(item => {
 				item.isActive = false
 			})
+			state.patient.items[tagId].pic.forEach(item => {
+				item.isActive = false
+			})
 			state.patient.items[tagId].isActive = isActive
+		},
+		picActive: (state, action) => {
+			const {tagId, picId, isActive} = action.payload
+			state.patient.items[tagId].pic.forEach(item => {
+				item.isActive = false
+			})
+			state.patient.items[tagId].pic[picId].isActive = isActive
 		}
 	}
 })
 	
-export const {active} = choiceSlice.actions
+export const {active, picActive} = choiceSlice.actions
 export default choiceSlice.reducer
 	
 	
