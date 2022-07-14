@@ -15,5 +15,23 @@
 		column-gap: 35px;
 
 	}
+	&_mobile {
+		margin-top: 10px;
+		display: flex;
+		flex-direction: column;
+		h2 {
+			font-weight: 700;
+			font-size: 28px;
+			line-height: 1.25;
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			width: 380px;
+			padding: 0 15px;
 
+		}
+	}
 }

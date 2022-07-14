@@ -11,19 +11,26 @@
 		top:50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		
 		.image {
 			position: relative;
-			width: 100%;
-			height: 100%;
+			width: 315px;
+			height: 315px;
+			&:hover {
+				cursor: pointer;
+				border: 1px solid #223867;;
+				border-radius: 50%;
+			}
 			img {
 				position: absolute;
 				width: 100%;
 				height: 100%;
 				top: 0;
 				left: 0;
-				object-fit: contain;
+				object-fit: cover;
 				border-radius: 50%;
 				opacity: .7;
+				
 			}
 		}
 		.image__title {
@@ -50,7 +57,9 @@
 				position: absolute;
 				width: 110px;
 				height: 110px;
-				cursor: pointer;
+				&:hover {
+					cursor: pointer;
+				}
 				&::before {
 					content: url('../../assets/icons/label.png');
 					position: absolute;
@@ -70,4 +79,48 @@
 		}
 	}
 	
+}
+
+
+
+
+.Describe_mobile {
+	margin-top: 40px;
+	position: relative;
+	margin-bottom: 50px;
+	ul {
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		align-items: flex-start;
+		list-style: none;
+		width: 380px;
+		
+		li {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: relative;
+			
+			
+			img {
+				position: relative;
+				width: 40px;
+				height: 40px;
+			}
+			.pic__alt {
+				padding-left: 30px;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 1.222222;
+				color: #223867;
+				text-align: left;
+
+			}
+		}
+		li:not(:last-child){
+			margin-bottom: 20px;
+		}
+	}
 }

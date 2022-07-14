@@ -3,7 +3,7 @@ import css from './PatientItem.module.scss'
 import { useDispatch } from 'react-redux'
 import { active } from '../../../redux/reducer'
 
-export const PatientItem = ({human, url, indications, isActive, id}) => {
+export const PatientItem = ({human, url, indications, isActive, id, match}) => {
 
 	const dispatch = useDispatch()
 
@@ -15,8 +15,10 @@ export const PatientItem = ({human, url, indications, isActive, id}) => {
 		cls.push(css.active)
 	} 
 
+	const clsItem = 'PatientItem' + match
+
 	return (
-		<div className={css.PatientItem}>
+		<div className={css[clsItem]}>
 			<h3>{human}</h3>
 			<div className={cls.join(' ')}>
 				<img 
@@ -26,7 +28,7 @@ export const PatientItem = ({human, url, indications, isActive, id}) => {
 				/>
 			</div>
 			<ul>
-				{
+				{isActive &&
 					indications.map((item, index) => {
 						return (
 							<li key={index} className={css.item}>{item}</li>

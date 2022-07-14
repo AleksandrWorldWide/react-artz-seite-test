@@ -3,11 +3,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
  }
 
  main {
-	height: 100%;
-	max-width: 1264px;
+	width: 1264px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

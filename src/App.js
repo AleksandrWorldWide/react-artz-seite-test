@@ -6,6 +6,7 @@ import { Patient } from './components/Patient/Patient';
 import { Answer } from './components/Answer/Answer';
 import { Describe } from './components/Describe/Describe';
 import WebFont from 'webfontloader';
+import Media from 'react-media';
 
 
 const App = ({title}) => {
@@ -22,15 +23,45 @@ const App = ({title}) => {
 		});
 	  }, []);
 
-	
+	function View(match = '') {
+
+		return (
+			<>
+				{
+					match === '' ?
+					<>
+						<Header match={match}/>
+						<Patient match={match}/>
+						<Answer match={match}/>
+						<Describe match={match}/>
+					</> :
+					<>
+						<Header match={match}/>
+						<Patient match={match}/>
+						<Answer match={match}/>
+						<Describe match={match}/>
+					</>
+					
+
+				} 
+			</>
+		)
+	}
 
   return (
     <div className="App">
 		<main className='container'>
-				<Header/>
-				<Patient/>
-				<Answer/>
-				<Describe/>
+			<Media queries={{
+				mobile: "(min-width: 415px)"
+			}}>
+				{matches => {
+					return (
+						<>
+							{matches.mobile ? View() : View('_mobile')}
+						</>
+					)
+				}}
+			</Media>
 		</main>
     </div>
   );
